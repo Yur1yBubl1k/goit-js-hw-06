@@ -13,42 +13,14 @@ const images = [
   },
 ];
 
-// ingredients.forEach((item) => {
-//   const ingredientTitle = document.createElement('li');
-//   ingredientTitle.textContent = item
-//   ingredientTitle.classList.add('item')
-//   parentNode.append(ingredientTitle)
-//   console.log(ingredientTitle)
-// });
 const parentNode = document.querySelector('.gallery')
-// console.log(parentNode);
-images.forEach((item) =>{
-  const galleryList = document.createElement('li');
-  const galleryImg = document.createElement('img');
 
-  galleryImg.src = item.url;
-  galleryImg.alt = item.alt;
-  galleryList.classList.add('itemImg')
-  galleryImg.width= 640;
-
-  galleryList.appendChild(galleryImg);
-  parentNode.appendChild(galleryList);
-
-  console.log(galleryList);
-  // document.body.appendChild(galleryImg);
-})
+const newImages = images.map( item =>{
+  return `<li class='gallery-item'><img src=${item.url} alt=${item.alt} width=640 class='itemImg'</li>`
 
 
-// Напиши скрипт для створення галереї зображень на підставі масиву даних. 
-// HTML містить список ul.gallery.
+});
 
-// <ul class="gallery"></ul>
+parentNode.insertAdjacentHTML('beforeend', newImages.join(""));
 
-// Використовуй масив об'єктів images для створення елементів <img>, 
-// вкладених в <li>.
-//  Для створення розмітки використовуй шаблонні рядки і 
-//  метод insertAdjacentHTML().
 
-// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
-// Додай мінімальне оформлення галереї флексбоксами 
-// або грідами через CSS класи.

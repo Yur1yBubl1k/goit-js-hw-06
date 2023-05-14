@@ -8,24 +8,15 @@ const ingredients = [
 ];
 
 const parentNode = document.querySelector('#ingredients')
-// console.log(parentNode)
 
-ingredients.forEach((item) => {
+const updIngredienst = ingredients.map( item => {
   const ingredientTitle = document.createElement('li');
   ingredientTitle.textContent = item
   ingredientTitle.classList.add('item')
-  parentNode.append(ingredientTitle)
-  console.log(ingredientTitle)
  
+ return ingredientTitle
 });
 
-// document.body.ul.append(ingredientTitle)
+parentNode.append(...updIngredienst)
 
-// Напиши скрипт, який для кожного елемента масиву ingredients:
 
-// Створить окремий елемент <li>. 
-// Обов'язково використовуй метод document.createElement().
-// Додасть назву інгредієнта як його текстовий вміст.
-// Додасть елементу клас item.
-// Після чого, вставить усі <li> 
-// за одну операцію у список ul#ingredients.
