@@ -8,7 +8,7 @@ const formGeneralFunc = (event) => {
       } = event.currentTarget;
 
     if (email.value === "" || password.value === "") {
-    console.log(alert("Всі поля повинні бути заповнені"));
+    return alert("Всі поля повинні бути заповнені");
     }
     console.log( {
     email: email.value,
